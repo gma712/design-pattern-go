@@ -51,7 +51,7 @@ type BookShelfIterator struct {
 	index     int
 }
 
-func bookShelfIterator(bookshelf *BookShelf) *BookShelfIterator{
+func bookShelfIterator(bookshelf *BookShelf) *BookShelfIterator {
 	return &BookShelfIterator{
 		bookShelf: bookshelf,
 		index:     0,
@@ -79,7 +79,8 @@ func main() {
 	bookshelf.appendBook(&Book{"Forth"})
 	var it Iterator = bookshelf.iterator()
 	for it.hasNext() {
-		book := it.next().(*Book)
-		fmt.Println(book.getName())
+		if book, ok := it.next().(*Book); ok {
+			fmt.Println(book.getName())
+		}
 	}
 }
