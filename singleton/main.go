@@ -9,8 +9,8 @@ import (
 func main() {
 	fmt.Println("Start.")
 	obj1 := singleton.GetInstance()
-	obj2 := singleton.GetInstance()
 	fmt.Println(obj1)
+	obj2 := singleton.GetInstance()
 	fmt.Println(obj2)
 	if obj1 == obj2 {
 		fmt.Println("同じインスタンスです。")
